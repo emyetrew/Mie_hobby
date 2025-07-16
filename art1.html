@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juita Teja</title>
+	
+  <link rel="stylesheet" href="hobby_css/hobbystyle.css" />
+</head>
+<body>
+	
+
+	
+<!-- 🔶 ORANGE NAV HEADER -->
+<header class="top-nav">
+  <div class="nav-left">
+    <img src="hobby_img/iconhobby_img/Mie.png" alt="yada">
+  </div>
+  <div class="nav-right">
+    <a href="hobby_mainpage.html">Home</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+	
+	
+<div class="star-container"></div>
+<section class="page2-animate">
+	
+	
+	
+  <!-- Hero Section -->
+  <section class="art-hero">
+	  
+    <div class="art-main">
+      <img src="hobby_img/b_juitateja.jpg" alt="Juita Teja" onclick="openFullscreen(this)">
+      <div class="art-text">
+        <h1>Juita Teja</h1>
+        <p>
+          I first drew this figure with the intention of joining an open competition of all ages in 2022, where contestants must choose a historical figure from Malacca Sultanate era driven from Hikayat. I was inspired by a book named 'Nirnama' written by Hilal Asyraf, a beautiful-high-maintenance of a woman from Pahang, her name is Tun Teja Ratna Benggala. I even wrote a poem after her story.
+        </p>
+        <button class="back-btn" onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+  </section>
+
+	
+	
+	
+  <!-- Art Process Section -->
+
+ <section class="art-process">
+  <!-- Reference -->
+  <div class="process-box">
+    <div class="process-header">
+      <img src="hobby_img\iconhobby_img\pinterest_icon.png" alt="Reference Icon" />
+      <h3>REFERENCE</h3>
+    </div>
+    <div class="process-image">
+      <img src="hobby_img/ref_juitateja.jpg" alt="Reference drawing of Teja">
+    </div>
+    <p>
+      I found this outfit of Tun Teja in a drawing. Saturating the color here suits her personality.
+    </p>
+  </div>
+
+  <!-- Drawing -->
+  <div class="process-box">
+    <div class="process-header">
+      <img src="hobby_img/iconhobby_img/ibis_icon.png" alt="Drawing Icon" />
+      <h3>DRAWING</h3>
+    </div>
+    <div class="process-image">
+      <img src="hobby_img/draw_juitateja.jpg" alt="Sketch of Teja">
+    </div>
+    <p>
+      A single sketch already took hours to draw and take proportions right, but really coloring this also gave me a reflective challenge :’)
+    </p>
+  </div>
+
+  <!-- Editing -->
+  <div class="process-box">
+    <div class="process-header">
+      <img src="hobby_img/iconhobby_img/picsart_icon.jpg" alt="Editing Icon" />
+      <h3>EDITING</h3>
+    </div>
+    <div class="process-image">
+      <img src="hobby_img/b_juitateja.jpg" alt="Final artwork editing view">
+    </div>
+    <p>
+      To add layers of lighting and color correction to ensure my piece holds a gentle harmony — I also chose to focus on the skin color.
+    </p>
+  </div>
+</section>
+
+	
+	<!-- Fullscreen Image Viewer -->
+<div id="fullscreen-viewer" class="fullscreen-hidden">
+  <div class="fullscreen-content">
+    <span class="close-btn" onclick="closeFullscreen()">×</span>
+    <img id="fullscreen-img" src="" alt="Full view of artwork" />
+  </div>
+</div>
+	
+<script>
+  function openFullscreen(imgElement) {
+    const viewer = document.getElementById("fullscreen-viewer");
+    const viewerImg = document.getElementById("fullscreen-img");
+    viewerImg.src = imgElement.src;
+    viewer.classList.add("active");
+    viewer.classList.remove("fullscreen-hidden");
+  }
+
+  function closeFullscreen() {
+    const viewer = document.getElementById("fullscreen-viewer");
+    viewer.classList.remove("active");
+    viewer.classList.add("fullscreen-hidden");
+  }
+
+  // ⭐ Star Background Script
+  window.addEventListener("DOMContentLoaded", () => {
+    const starContainer = document.querySelector('.star-container');
+    if (starContainer) {
+      for (let i = 0; i < 80; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.width = `${Math.random() * 2 + 1}px`;
+        star.style.height = star.style.width;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        starContainer.appendChild(star);
+      }
+    }
+  });
+</script>
+	
+</section>	
+</body>
+</html>

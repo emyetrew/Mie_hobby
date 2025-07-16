@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rumah Pokok</title>
+	
+  <link rel="stylesheet" href="hobby_css/hobbystyle.css" />
+</head>
+<body>
+	
+
+	
+<!-- ORANGE NAV HEADER -->
+<header class="top-nav">
+  <div class="nav-left">
+    <img src="hobby_img/iconhobby_img/Mie.png" alt="yada">
+  </div>
+  <div class="nav-right">
+    <a href="hobby_mainpage.html">Home</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+	
+	
+		
+	
+<div class="star-container"></div>
+<section class="page2-animate">
+	
+	
+	
+
+  <!-- Hero Section -->
+  <section class="art-hero">
+	  
+    <div class="art-main">
+      <img src="hobby_img/b_rumahpokok.jpg" alt="Juita Teja" onclick="openFullscreen(this)">
+      <div class="art-text">
+        <h1>Rumah Pokok</h1>
+        <p>
+          I have always loved the concept of traditional Malay’s house. I dream of creating yet another nostalgic background for my characters backstory. I drew this inside of my dorm back when I was in form 4, right away leaving my mathematics problem as soon as I was inspired to draw. It’s just a canon event for any artist to get creative in the most critical times. Reminded of the reference I saw the other day, I started sketching purely based off memories and imagination. Then, I just started praying it’ll work out as I trusted the process.
+        </p>
+        <button class="back-btn" onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+  </section>
+
+	
+	
+	
+  <!-- Art Process Section -->
+
+ <section class="art-process">
+  <!-- Reference -->
+  <div class="process-box">
+    <div class="process-header">
+      <img src="hobby_img\iconhobby_img\pinterest_icon.png" alt="Reference Icon" />
+      <h3>REFERENCE</h3>
+    </div>
+    <div class="process-image">
+      <img src="hobby_img/ref_rumahpokok.jpg" alt="Reference drawing of Teja">
+    </div>
+    <p>
+     I wasn’t searching for anything specific in particular when I found a concept art of a tree house. I thought why not improve it?
+    </p>
+  </div>
+
+  <!-- Drawing -->
+  <div class="process-box">
+    <div class="process-header">
+      <img src="hobby_img/iconhobby_img/pencil_icon.jpg" alt="Drawing Icon" />
+      <h3>SKETCHING</h3>
+    </div>
+    <div class="process-image">
+      <img src="hobby_img/sketch_rumahpokok.jpg" alt="Sketch of Teja">
+    </div>
+    <p>
+      Back then I don’t have any access to any digital tools except for my very own tablet and a passion to express myself through my characters.
+    </p>
+  </div>
+
+  <!-- Editing -->
+  <div class="process-box">
+    <div class="process-header">
+      <img src="hobby_img/iconhobby_img/pen_icon.png" alt="Editing Icon" />
+      <h3>INKING</h3>
+    </div>
+    <div class="process-image">
+      <img src="hobby_img/b_rumahpokok.jpg" alt="Final artwork editing view">
+    </div>
+    <p>
+     Added layers of lighting and overlays to create depth in my drawing especially for the background.
+    </p>
+  </div>
+</section>
+
+	
+	<!-- Fullscreen Image Viewer -->
+<div id="fullscreen-viewer" class="fullscreen-hidden">
+  <div class="fullscreen-content">
+    <span class="close-btn" onclick="closeFullscreen()">×</span>
+    <img id="fullscreen-img" src="" alt="Full view of artwork" />
+  </div>
+</div>
+	
+<script>
+  function openFullscreen(imgElement) {
+    const viewer = document.getElementById("fullscreen-viewer");
+    const viewerImg = document.getElementById("fullscreen-img");
+    viewerImg.src = imgElement.src;
+    viewer.classList.add("active");
+    viewer.classList.remove("fullscreen-hidden");
+  }
+
+  function closeFullscreen() {
+    const viewer = document.getElementById("fullscreen-viewer");
+    viewer.classList.remove("active");
+    viewer.classList.add("fullscreen-hidden");
+  }
+
+  // ⭐ Star Background Script
+  window.addEventListener("DOMContentLoaded", () => {
+    const starContainer = document.querySelector('.star-container');
+    if (starContainer) {
+      for (let i = 0; i < 80; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.width = `${Math.random() * 2 + 1}px`;
+        star.style.height = star.style.width;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        starContainer.appendChild(star);
+      }
+    }
+  });
+</script>
+	
+</section>	
+</body>
+</html>

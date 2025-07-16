@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impi</title>
+	
+  <link rel="stylesheet" href="hobby_css/hobbystyle.css" />
+</head>
+<body>
+	
+
+	
+<!-- ORANGE NAV HEADER -->
+<header class="top-nav">
+  <div class="nav-left">
+    <img src="hobby_img/iconhobby_img/Mie.png" alt="yada">
+  </div>
+  <div class="nav-right">
+    <a href="hobby_mainpage.html">Home</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+	
+	
+	
+		
+	
+<div class="star-container"></div>
+<section class="page2-animate">
+	
+	
+	
+
+  <!-- Hero Section -->
+  <section class="art-hero">
+	  
+    <div class="art-main">
+      <img src="hobby_img/b_impi.jpg" alt="Juita Teja" onclick="openFullscreen(this)">
+      <div class="art-text">
+        <h1>Impi</h1>
+        <p>
+         Reflecting myself after all the years I spent believing in my dreams, to become an artist. Even when life gets me into a difficult path, I’d like to thank little-me for always being passionate towards art despite knowing that life's unfair. That’s when I realized that my strongest supporter had always been me all along. Looking at my younger-self, when she first started digital art.
+        </p>
+        <button class="back-btn" onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+  </section>
+
+	
+	
+	
+  <!-- Art Process Section -->
+
+ <section class="art-process">
+  <!-- Reference -->
+  <div class="process-box">
+    <div class="process-header">
+      <img src="hobby_img\iconhobby_img\pinterest_icon.png" alt="Reference Icon" />
+      <h3>REFERENCE</h3>
+    </div>
+    <div class="process-image">
+      <img src="hobby_img/ref_impi.jpg" alt="Reference drawing of Teja">
+    </div>
+    <p>
+      The original art I refer to because it first catches my attention to how dramatic the lighting and mood is. 
+    </p>
+  </div>
+
+  <!-- Drawing -->
+  <div class="process-box">
+    <div class="process-header">
+      <img src="hobby_img/iconhobby_img/iartbook_icon.jpg" alt="Drawing Icon" />
+      <h3>DRAWING</h3>
+    </div>
+    <div class="process-image">
+      <img src="hobby_img/draw_impi.jpg" alt="Sketch of Teja">
+    </div>
+    <p>
+      I created the texture in this piece purposefully by experimenting with different brushes, which also represents my eagerness to discover more about art.
+    </p>
+  </div>
+
+  <!-- Editing -->
+  <div class="process-box">
+    <div class="process-header">
+      <img src="hobby_img/iconhobby_img/picsart_icon.jpg" alt="Editing Icon" />
+      <h3>EDITING</h3>
+    </div>
+    <div class="process-image">
+      <img src="hobby_img/edit_impi.jpg" alt="Final artwork editing view">
+    </div>
+    <p>
+I add blending mode to brush strokes that I applied to make the light blends well with the sun which hits a specific area in the piece.
+    </p>
+  </div>
+</section>
+
+	
+	<!-- Fullscreen Image Viewer -->
+<div id="fullscreen-viewer" class="fullscreen-hidden">
+  <div class="fullscreen-content">
+    <span class="close-btn" onclick="closeFullscreen()">×</span>
+    <img id="fullscreen-img" src="" alt="Full view of artwork" />
+  </div>
+</div>
+	
+	
+	
+<script>
+  function openFullscreen(imgElement) {
+    const viewer = document.getElementById("fullscreen-viewer");
+    const viewerImg = document.getElementById("fullscreen-img");
+    viewerImg.src = imgElement.src;
+    viewer.classList.add("active");
+    viewer.classList.remove("fullscreen-hidden");
+  }
+
+  function closeFullscreen() {
+    const viewer = document.getElementById("fullscreen-viewer");
+    viewer.classList.remove("active");
+    viewer.classList.add("fullscreen-hidden");
+  }
+
+  // ⭐ Star Background Script
+  window.addEventListener("DOMContentLoaded", () => {
+    const starContainer = document.querySelector('.star-container');
+    if (starContainer) {
+      for (let i = 0; i < 80; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.width = `${Math.random() * 2 + 1}px`;
+        star.style.height = star.style.width;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        starContainer.appendChild(star);
+      }
+    }
+  });
+</script>
+	
+</section>	
+</body>
+</html>
